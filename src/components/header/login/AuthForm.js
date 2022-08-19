@@ -18,8 +18,11 @@ export default function AuthForm() {
         dispatch(
           setCurrentUser({ email: `${user.email}`, uid: `${user.uid}` })
         );
-        if (window.location.href !== 'http://localhost:5173/') {
-          window.location.href = '/';
+        if (
+          window.location.href !==
+          'https://oxopolitics-internship-for-zerobase.github.io/cra_faq.github.io/'
+        ) {
+          window.location.href = '/cra_faq.github.io/';
         }
       } else {
         console.log('aa');
