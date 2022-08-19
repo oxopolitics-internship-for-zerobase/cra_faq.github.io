@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { collection, addDoc } from 'firebase/firestore';
-import { app, dbService } from '../firebase';
+import { getFirestore } from 'firebase/firestore';
+import { app } from '../firebase';
 
 function WritingAdmin({ User }) {
   const [editBtn, setEditBtn] = useState(false);
@@ -26,10 +27,10 @@ function WritingAdmin({ User }) {
       createdAt: timeSet,
       updatedAt: timeSet,
     };
-    const db = dbService(app);
-    const docRef = await addDoc(collection(db, 'QnA'), data);
+    const db = getFirestore(app);
+    console.log(db);
+    await addDoc(collection(db, 'QnA'), data);
     toggleBtnHandler();
-    // console.log(data);
   };
 
   const EditingBtn = ({ state, toggleBtnHandler }) => {
@@ -97,10 +98,12 @@ const EditingContainer = styled.div`
   .submit {
     width: 80px;
     height: 37px;
-    margin: 0 7px 10px 640px;
+    margin-left: auto;
     border-radius: 7px;
     background-color: black;
     color: white;
+
+    cursor: pointer;
   }
 `;
 
