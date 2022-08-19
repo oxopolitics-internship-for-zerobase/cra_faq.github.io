@@ -5,6 +5,9 @@ import {
   onAuthStateChanged,
 } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setCurrentUser } from '../../../app/CurrentUser';
+import styled from 'styled-components';
 
 export default function AuthForm() {
   const [email, setEmail] = useState('');
@@ -12,6 +15,8 @@ export default function AuthForm() {
   const [newAccount, setNewAccount] = useState(false);
   const [error, setError] = useState('');
   const auth = getAuth();
+  // const currentUser = useSelector((state) => state.currentUser.currentUser);
+  const dispatch = useDispatch();
 
   // console.log(currentUser.value);
 
@@ -19,7 +24,12 @@ export default function AuthForm() {
     onAuthStateChanged(auth, (user) => {
       // console.log(user.email);
       if (user) {
-        console.log(user);
+        dispatch(
+          setCurrentUser({ email: `${user.email}`, uid: `${user.uid}` })
+        );
+        if (window.location.href !== 'http://localhost:5173/') {
+          window.location.href = '/';
+        }
       } else {
         console.log('aa');
       }
@@ -58,7 +68,7 @@ export default function AuthForm() {
   const toggleAccount = () => setNewAccount((prev) => !prev);
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <StyledForm onSubmit={onSubmit}>
         <input
           name='email'
           type='text'
@@ -83,10 +93,38 @@ export default function AuthForm() {
           className='authInput authSubmit'
         />
         {error && <span className='authError'>{error}</span>}
-      </form>
-      <button onClick={toggleAccount}>
+      </StyledForm>
+      <LoginBox onClick={toggleAccount}>
         {newAccount ? 'Sign in' : 'Create Account'}
-      </button>
+      </LoginBox>
     </>
   );
 }
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+
+  margin: 10px 0;
+  input {
+    width: 200px;
+    height: 25px;
+    margin: 10px 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+`;
+
+const LoginBox = styled.div`
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 3px solid #e6e6e6;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #464646;
+    color: #e6e6e6;
+  }
+`;
