@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+<img src="./qnaboard_readme.png" alt="QnA board title" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align=center>
 
-## Available Scripts
+<h1>oxopolitics QnA 게시판입니다!</h1>
 
-In the project directory, you can run:
+<div style="margin-bottom: 30px;">
 
-### `npm start`
+<div style="margin-bottom: 30px;">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Description of Project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<b>Why?</b> <br/>
+현재 옥소폴리틱스의 QnA 게시판이 Notion으로 만들어져 있습니다. <br/>
+저희는 Notion 대신 옥소폴리틱스의 웹 서비스로 구현을 하였습니다.
 
-### `npm test`
+<b>What?</b> <br/>
+<a href="https://faq.oxopolitics.com/">옥소폴리틱스 QnA</a>의 노션으로 디자인 된 Q&A를 웹페이지로 제작하였습니다. <br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<b>Preview</b><br/>
+<img src="./qnaboard_preview.png" alt="qnaboard preview">
 
-### `npm run build`
+</div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<div style="margin-bottom: 30px;">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tech Stacks
 
-### `npm run eject`
+<!-- JavaScript -->
+<img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black"/>
+<!-- React -->
+<img alt="React" src ="https://img.shields.io/badge/React-61DAFB.svg?&style=for-the-badge&logo=React&logoColor=black"/>
+<!-- Vite -->
+<img alt="Vite" src ="https://img.shields.io/badge/Vite-646CFF.svg?&style=for-the-badge&logo=Vite&logoColor=white"/>
+<!-- Styled Components -->
+<img alt="Vite" src ="https://img.shields.io/badge/styledcomponents-DB7093.svg?&style=for-the-badge&logo=styledcomponents&logoColor=white"/>
+<!-- FireBase -->
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+</div>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Crew Info
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| TEAM                | Position | Blog                                                      | Github                                                     |
+| ------------------- | -------- | --------------------------------------------------------- | ---------------------------------------------------------- |
+| :wink: 이소윤       | FrontEnd | <a href="https://programmerplum.tistory.com/">tistory</a> | <a href="https://github.com/99dlthdbs">@99dlthdbs</a>      |
+| :sunglasses: 이기문 | FrontEnd | <a href="https://velog.io/@kimoon212">velog</a>           | <a href="@kimoon1 ">@kimoon1</a>                           |
+| :laughing: 정영훈   | FrontEnd | <a href="https://youngst.tistory.com/7">tistory</a>       | <a href="https://github.com/young-st511">@young-st5111</a> |
 
-## Learn More
+</div>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</div>
