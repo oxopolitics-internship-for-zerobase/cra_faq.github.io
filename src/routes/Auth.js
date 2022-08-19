@@ -1,11 +1,6 @@
 import React from 'react';
 
-import { authService } from '../components/firebase';
-import {
-  GoogleAuthProvider,
-  GithubAuthProvider,
-  signInWithPopup,
-} from 'firebase/auth';
+import { GoogleAuth, signPopup } from '../components/firebase';
 import AuthForm from '../components/header/login/AuthForm';
 import styled from 'styled-components';
 
@@ -16,13 +11,13 @@ const Auth = () => {
     } = event;
     let provider;
     if (name === 'google') {
-      provider = new GoogleAuthProvider();
+      provider = GoogleAuth;
     }
     // else if (name === 'github') {
     //   provider = new GithubAuthProvider();
     // }
 
-    await signInWithPopup(authService, provider);
+    await signPopup(provider);
   };
   return (
     <LoginContainer>

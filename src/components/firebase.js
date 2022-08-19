@@ -1,5 +1,11 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -12,5 +18,16 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
-export const authService = getAuth();
+export const auth = getAuth();
 export const dbService = getFirestore();
+export const GoogleAuth = new GoogleAuthProvider();
+export const signPopup = (provider) => {
+  return signInWithPopup(auth, provider);
+};
+export const CreateUser = async (email, password) => {
+  await createUserWithEmailAndPassword(auth, email, password);
+};
+
+export const SignUser = async (email, password) => {
+  await signInWithEmailAndPassword(auth, email, password);
+};

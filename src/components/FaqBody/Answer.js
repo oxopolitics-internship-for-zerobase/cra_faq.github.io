@@ -191,7 +191,7 @@ const makeText = (answer, search) => {
 
 const validAdmin = (id) => {
   const ADMIN_UID = 'SOT3U2CfXxXlIJxUYkh79gD7WYj1';
-  console.log(id);
+  // console.log(id);
   if (id === ADMIN_UID) {
     return true;
   } else {

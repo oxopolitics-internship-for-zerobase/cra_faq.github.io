@@ -14,7 +14,7 @@ function HeaderNav({ active, Change }) {
     Change('test');
     if (!navText) {
       console.log(`${el.classList.item(0)}`);
-      const $headerNav = document.querySelector('.headerNav');
+      // const $headerNav = document.querySelector('.headerNav');
       const prevActive = document.querySelector('.active');
       if (prevActive) {
         prevActive.classList.remove('active');
@@ -27,7 +27,9 @@ function HeaderNav({ active, Change }) {
   };
 
   useEffect(() => {
-    if (!active) return;
+    if (!active) {
+      return;
+    }
     const activeList = document.querySelector(`.${active}`);
     const activeSvg = activeList.querySelector('path');
     activeList.classList.add('active');
@@ -47,9 +49,6 @@ function HeaderNav({ active, Change }) {
         <li className='IconChat'>
           <IconChat color={'#e6e6e6'} /> <span>톡</span>
         </li>
-        {/* <li className='notice'>
-          <CreateImg src={'IconNotification'} /> <span>알림</span>
-        </li> */}
       </ul>
     </Nav>
   );

@@ -1,11 +1,7 @@
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-} from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth, CreateUser, SignUser } from '../../firebase';
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setCurrentUser } from '../../../app/CurrentUser';
 import styled from 'styled-components';
 
@@ -14,15 +10,10 @@ export default function AuthForm() {
   const [password, setPassword] = useState('');
   const [newAccount, setNewAccount] = useState(false);
   const [error, setError] = useState('');
-  const auth = getAuth();
-  // const currentUser = useSelector((state) => state.currentUser.currentUser);
   const dispatch = useDispatch();
-
-  // console.log(currentUser.value);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      // console.log(user.email);
       if (user) {
         dispatch(
           setCurrentUser({ email: `${user.email}`, uid: `${user.uid}` })
@@ -53,10 +44,12 @@ export default function AuthForm() {
       let data;
       if (newAccount) {
         //create account
-        data = await createUserWithEmailAndPassword(auth, email, password);
+        data = CreateUser(email, password);
+        console.log(data);
       } else {
         //log in
-        data = await signInWithEmailAndPassword(auth, email, password);
+        data = await SignUser(email, password);
+        console.log(data);
       }
       // console.log(data);
     } catch (error) {

@@ -2,7 +2,7 @@ import React from 'react';
 import FaqBody from '../components/FaqBody/FaqBody';
 import Header from '../components/header/Header';
 import AdminInfo from '../components/header/login/AdminInfo';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function Home() {
   AdminInfo();

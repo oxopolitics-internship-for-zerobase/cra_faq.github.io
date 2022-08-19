@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { collection, addDoc, getFirestore } from 'firebase/firestore';
-import { app } from '../firebase';
+import { collection, addDoc } from 'firebase/firestore';
+import { app, dbService } from '../firebase';
 
 function WritingAdmin({ User }) {
   const [editBtn, setEditBtn] = useState(false);
@@ -26,7 +26,7 @@ function WritingAdmin({ User }) {
       createdAt: timeSet,
       updatedAt: timeSet,
     };
-    const db = getFirestore(app);
+    const db = dbService(app);
     const docRef = await addDoc(collection(db, 'QnA'), data);
     toggleBtnHandler();
     // console.log(data);
